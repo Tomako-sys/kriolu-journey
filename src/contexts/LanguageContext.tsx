@@ -34,7 +34,7 @@ const translations = {
     "nav.practice": "Pratique",
     "nav.progress": "Progrès",
     "nav.chat": "Chat",
-    "welcome": "Prêt à continuer votre voyage en Kriolu?",
+    "welcome": "Prêt à continuer votre voyage en Kriolu ?",
     "daily.vocabulary": "Vocabulaire Quotidien",
     "next.word": "Mot Suivant",
     "continue.learning": "Continuer l'Apprentissage"
