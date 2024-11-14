@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import Practice from "./pages/Practice";
+import Progress from "./pages/Progress";
 
 const queryClient = new QueryClient();
 
@@ -19,7 +20,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/practice" element={<Practice />} />
-            <Route path="/progress" element={<Index />} />
+            <Route path="/progress" element={<Progress />} />
             <Route path="/chat" element={<Index />} />
           </Routes>
         </BrowserRouter>

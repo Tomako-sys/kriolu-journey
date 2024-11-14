@@ -17,7 +17,11 @@ const translations = {
     "welcome": "Ready to continue your Kriolu journey?",
     "daily.vocabulary": "Daily Vocabulary",
     "next.word": "Next Word",
-    "continue.learning": "Continue Learning"
+    "continue.learning": "Continue Learning",
+    "progress.title": "Progress",
+    "progress.subtitle": "Track your Kriolu learning journey",
+    "progress.achievements": "Achievements",
+    "progress.goals": "Goals"
   },
   pt: {
     "nav.lessons": "Lições",
@@ -27,7 +31,11 @@ const translations = {
     "welcome": "Pronto para continuar sua jornada Kriolu?",
     "daily.vocabulary": "Vocabulário Diário",
     "next.word": "Próxima Palavra",
-    "continue.learning": "Continuar Aprendendo"
+    "continue.learning": "Continuar Aprendendo",
+    "progress.title": "Progresso",
+    "progress.subtitle": "Acompanhe sua jornada de aprendizado do Kriolu",
+    "progress.achievements": "Conquistas",
+    "progress.goals": "Objetivos"
   },
   fr: {
     "nav.lessons": "Leçons",
@@ -37,7 +45,11 @@ const translations = {
     "welcome": "Prêt à continuer votre voyage en Kriolu ?",
     "daily.vocabulary": "Vocabulaire Quotidien",
     "next.word": "Mot Suivant",
-    "continue.learning": "Continuer l'Apprentissage"
+    "continue.learning": "Continuer l'Apprentissage",
+    "progress.title": "Progrès",
+    "progress.subtitle": "Suivez votre progression dans l'apprentissage du Kriolu",
+    "progress.achievements": "Réalisations",
+    "progress.goals": "Objectifs"
   }
 };
 
