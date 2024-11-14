@@ -2,15 +2,18 @@ import Navigation from "@/components/Navigation";
 import ProgressBar from "@/components/ProgressBar";
 import LessonCard from "@/components/LessonCard";
 import VocabularyPractice from "@/components/VocabularyPractice";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen pb-20">
       {/* Header */}
       <header className="p-6 mb-8">
         <h1 className="text-3xl font-bold mb-2 animate-fade-up">Bon dia!</h1>
         <p className="text-gray-600 animate-fade-up" style={{ animationDelay: "100ms" }}>
-          Ready to continue your Kriolu journey?
+          {t("welcome")}
         </p>
       </header>
 
@@ -26,7 +29,7 @@ const Index = () => {
 
       {/* Continue Learning */}
       <section className="px-6">
-        <h2 className="text-2xl font-semibold mb-4">Continue Learning</h2>
+        <h2 className="text-2xl font-semibold mb-4">{t("continue.learning")}</h2>
         <div className="grid gap-4">
           <LessonCard 
             title="Basic Greetings"
