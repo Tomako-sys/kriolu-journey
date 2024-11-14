@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import ProgressBar from "@/components/ProgressBar";
 import LessonCard from "@/components/LessonCard";
-import VocabularyCard from "@/components/VocabularyCard";
+import VocabularyPractice from "@/components/VocabularyPractice";
 
 const Index = () => {
   return (
@@ -19,14 +19,9 @@ const Index = () => {
         <ProgressBar progress={35} />
       </section>
 
-      {/* Today's Lesson */}
-      <section className="px-6 mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Today's Lesson</h2>
-        <VocabularyCard 
-          word="Kumprimentu" 
-          translation="Greeting" 
-          audioUrl="/audio/greeting.mp3" 
-        />
+      {/* Vocabulary Practice */}
+      <section className="mb-12">
+        <VocabularyPractice />
       </section>
 
       {/* Continue Learning */}
