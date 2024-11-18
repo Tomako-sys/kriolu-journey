@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const HamburgerMenu = () => {
+export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useLanguage();
 
@@ -67,4 +67,4 @@ const HamburgerMenu = () => {
       </AnimatePresence>
     </div>
   );
-};
+}
