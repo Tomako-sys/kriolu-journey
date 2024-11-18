@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
+import BackHomeButton from "@/components/BackHomeButton";
 import { 
   Accordion,
   AccordionContent,
@@ -109,11 +110,12 @@ const Lessons = () => {
 
   return (
     <div className="min-h-screen bg-sand-light">
+      <BackHomeButton />
       <header className="sticky top-0 z-10 p-6 bg-white/80 backdrop-blur-xl border-b border-gray-100">
         <h1 className="text-2xl font-bold mb-2">{t("lessons.title")}</h1>
         <p className="text-sm text-gray-600">{t("lessons.subtitle")}</p>
         <div className="mt-2 text-primary font-semibold">
-          Points: {points}
+          {t("practice.points")}: {points}
         </div>
       </header>
 

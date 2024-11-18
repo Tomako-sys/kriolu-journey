@@ -6,6 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card } from "@/components/ui/card";
 import { Send } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import BackHomeButton from "@/components/BackHomeButton";
 import VocabularyPractice from "@/components/VocabularyPractice";
 
 interface Message {
@@ -18,7 +19,7 @@ const Practice = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Olá! Bu ta papia Kriolu. Modi ki bu sta oji? (Hello! I speak Kriolu. How are you today?)"
+      content: "Bonjour ! Je parle Kriolu. Comment allez-vous aujourd'hui ?"
     }
   ]);
   const [input, setInput] = useState("");
@@ -77,9 +78,10 @@ const Practice = () => {
 
   return (
     <div className="min-h-screen pb-20">
+      <BackHomeButton />
       <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg z-10 p-4 border-b">
-        <h1 className="text-2xl font-bold">Practice Kriolu</h1>
-        <p className="text-sm text-gray-600">Chat with AI to practice conversations</p>
+        <h1 className="text-2xl font-bold">{t("practice.chat")}</h1>
+        <p className="text-sm text-gray-600">{t("practice.chat.placeholder")}</p>
       </header>
 
       <main className="pt-24 px-4 pb-20">

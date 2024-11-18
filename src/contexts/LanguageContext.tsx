@@ -70,7 +70,7 @@ const translations = {
     "continue.learning": "Continuer l'Apprentissage",
     "lessons.title": "Leçons",
     "lessons.subtitle": "Commencez à apprendre le Kriolu étape par étape",
-    "culture.title": "Aspects Culturels",
+    "culture.title": "Culture",
     "culture.subtitle": "Découvrez la culture cap-verdienne",
     "community.title": "Communauté",
     "community.subtitle": "Connectez-vous avec d'autres apprenants",
@@ -82,14 +82,28 @@ const translations = {
     "settings.profile": "Profil",
     "phrasebook.title": "Guide de Phrases",
     "phrasebook.subtitle": "Phrases essentielles pour usage quotidien",
-    "listen": "Écouter"
+    "listen": "Écouter",
+    "back.home": "Retour à l'accueil",
+    "practice.chat": "Discutez pour pratiquer",
+    "practice.chat.placeholder": "Écrivez votre message...",
+    "practice.points": "Points",
+    "practice.level": "Niveau",
+    "categories.basics": "Les bases",
+    "categories.daily": "La vie quotidienne",
+    "categories.grammar": "Grammaire",
+    "categories.culture": "Culture & Voyage",
+    "validate": "Valider",
+    "try.again": "Réessayer",
+    "correct": "Correct !",
+    "incorrect": "Incorrect, réessayez",
+    "next": "Suivant"
   }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>("fr");
 
   const t = (key: string) => {
     return translations[language][key as keyof typeof translations["en"]] || key;
