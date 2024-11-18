@@ -9,15 +9,14 @@ export default function HamburgerMenu() {
   const { t } = useLanguage();
 
   const menuItems = [
-    { path: "/", label: t("nav.home") },
-    { path: "/lessons", label: t("nav.lessons") },
-    { path: "/practice", label: t("nav.practice") },
-    { path: "/progress", label: t("nav.progress") },
-    { path: "/culture", label: t("nav.culture") },
-    { path: "/community", label: t("nav.community") },
-    { path: "/settings", label: t("nav.settings") },
-    { path: "/phrasebook", label: t("nav.phrasebook") },
-  ];
+      { path: "/", label: `${t("nav.home")}.` },
+      { path: "/lessons", label: `Leçons.` },
+      { path: "/practice", label: `Pratique.` },
+      { path: "/progress", label: `Progrès.` },
+      { path: "/culture", label: `${t("nav.culture")}.` },
+      { path: "/community", label: `Communauté.` },
+      { path: "/settings", label: `${t("nav.settings")}.` },
+    ];
 
   return (
     <div className="relative z-50">
