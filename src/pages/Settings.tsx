@@ -34,7 +34,10 @@ const Settings = () => {
                 className={`w-full text-left p-2 rounded ${
                   language === lang.code ? "bg-primary/10 text-primary" : ""
                 }`}
-                onClick={() => setLanguage(lang.code)}
+                onClick={() => {
+                  setLanguage(lang.code);
+                  alert(`Langue changée en ${lang.label}`);
+                }}
               >
                 {lang.label}
               </button>

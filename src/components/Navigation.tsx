@@ -6,6 +6,10 @@ const Navigation = () => {
   const { t } = useLanguage();
   const location = useLocation();
 
+  if (!t) {
+    return <p>Erreur de chargement des traductions.</p>;
+  }
+
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-lg animate-fade-up">
       <div className="grid grid-cols-4 items-center p-4">

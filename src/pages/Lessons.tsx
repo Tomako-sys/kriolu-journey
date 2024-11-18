@@ -122,41 +122,45 @@ const Lessons = () => {
       <ScrollArea className="h-[calc(100vh-180px)]">
         <div className="p-4">
           <Accordion type="single" collapsible className="space-y-4">
-            {lessonCategories.map((category, categoryIndex) => (
-              <AccordionItem
-                key={categoryIndex}
-                value={`category-${categoryIndex}`}
-                className="border rounded-2xl bg-white overflow-hidden"
-              >
-                <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                  <div className="flex items-center">
-                    <h2 className="text-xl font-semibold">{category.title}</h2>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-6 p-4">
-                    {category.lessons.map((lesson, lessonIndex) => (
-                      <div key={lessonIndex} className="space-y-4">
-                        <h3 className="font-semibold text-lg text-primary">
-                          {lesson.title}
-                        </h3>
-                        <div className="grid gap-4">
-                          {lesson.content.map((item, itemIndex) => (
-                            <WordPractice
-                              key={itemIndex}
-                              word={item.original}
-                              translation={item.translation}
-                              audioUrl={item.audio}
-                              onValidation={handleWordValidation}
-                            />
-                          ))}
+            {lessonCategories.length > 0 ? (
+              lessonCategories.map((category, categoryIndex) => (
+                <AccordionItem
+                  key={categoryIndex}
+                  value={`category-${categoryIndex}`}
+                  className="border rounded-2xl bg-white overflow-hidden"
+                >
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                    <div className="flex items-center">
+                      <h2 className="text-xl font-semibold">{category.title}</h2>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="space-y-6 p-4">
+                      {category.lessons.map((lesson, lessonIndex) => (
+                        <div key={lessonIndex} className="space-y-4">
+                          <h3 className="font-semibold text-lg text-primary">
+                            {lesson.title}
+                          </h3>
+                          <div className="grid gap-4">
+                            {lesson.content.map((item, itemIndex) => (
+                              <WordPractice
+                                key={itemIndex}
+                                word={item.original}
+                                translation={item.translation}
+                                audioUrl={item.audio}
+                                onValidation={handleWordValidation}
+                              />
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))
+            ) : (
+              <p>Aucune catégorie disponible.</p>
+            )}
           </Accordion>
         </div>
       </ScrollArea>
