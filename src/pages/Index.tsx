@@ -9,24 +9,27 @@ const Index = () => {
   const { t } = useLanguage();
 
   return (
-    <div>
+    <div className="flex flex-col items-center bg-gray-100 min-h-screen">
       <HamburgerMenu />
-      <h1>{t("welcome")}</h1>
-      <ProgressBar progress={0} />
-      <div className="flex justify-around mt-4">
-        <Link to="/lessons" className="flex flex-col items-center">
-          <Trophy className="h-8 w-8 text-primary" />
-          <span>{t("nav.lessons")}</span>
+      <h1 className="text-4xl font-bold mt-8">{t("welcome")}</h1>
+      <ProgressBar className="w-3/4 mt-4" />
+      <div className="grid grid-cols-3 gap-4 mt-8 w-full max-w-4xl">
+        <Link to="/lessons" className="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <Trophy className="h-16 w-16 text-primary" />
+          <span className="mt-2 text-lg font-semibold">{t("nav.lessons")}</span>
         </Link>
-        <Link to="/practice" className="flex flex-col items-center">
-          <Flame className="h-8 w-8 text-primary" />
-          <span>{t("nav.practice")}</span>
+        <Link to="/practice" className="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <Flame className="h-16 w-16 text-primary" />
+          <span className="mt-2 text-lg font-semibold">{t("nav.practice")}</span>
         </Link>
-        <Link to="/progress" className="flex flex-col items-center">
-          <Star className="h-8 w-8 text-primary" />
-          <span>{t("nav.progress")}</span>
+        <Link to="/progress" className="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <Star className="h-16 w-16 text-primary" />
+          <span className="mt-2 text-lg font-semibold">{t("nav.progress")}</span>
         </Link>
       </div>
+      <footer className="mt-8 p-4 bg-white shadow-md w-full text-center">
+        <p className="text-gray-600">© 2023 Mon Application. Tous droits réservés.</p>
+      </footer>
     </div>
   );
 };
