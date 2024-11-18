@@ -5,6 +5,8 @@
 @layer base {
   body {
     @apply bg-sand-light text-gray-800 antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1 {
