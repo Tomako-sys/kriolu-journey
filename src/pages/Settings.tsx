@@ -2,18 +2,20 @@ import Navigation from "@/components/Navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card } from "@/components/ui/card";
 import { Globe, Bell, Download, User } from "lucide-react";
+import HamburgerMenu from "@/components/HamburgerMenu";
 
 const Settings = () => {
   const { t, language, setLanguage } = useLanguage();
 
   const languages = [
-    { code: "en", label: "English" },
-    { code: "pt", label: "Português" },
-    { code: "fr", label: "Français" }
+    { code: "en" as const, label: "English" },
+    { code: "pt" as const, label: "Português" },
+    { code: "fr" as const, label: "Français" }
   ];
 
   return (
     <div className="min-h-screen pb-20">
+      <HamburgerMenu />
       <header className="p-6">
         <h1 className="text-2xl font-bold mb-2">{t("settings.title")}</h1>
         <p className="text-gray-600">{t("settings.subtitle")}</p>

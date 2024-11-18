@@ -3,6 +3,7 @@ import ProgressBar from "@/components/ProgressBar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Trophy, Flame, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import HamburgerMenu from "@/components/HamburgerMenu";
 
 const Index = () => {
   const { t } = useLanguage();
@@ -10,6 +11,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen pb-20 bg-sand-light">
+      <HamburgerMenu />
       {/* Header with Welcome */}
       <header className="p-6 bg-primary text-white">
         <h1 className="text-3xl font-bold mb-2 animate-fade-up">Bon dia!</h1>

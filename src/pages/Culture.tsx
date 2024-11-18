@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card } from "@/components/ui/card";
 import { Volume2 } from "lucide-react";
+import HamburgerMenu from "@/components/HamburgerMenu";
 
 const Culture = () => {
   const { t } = useLanguage();
@@ -21,6 +22,7 @@ const Culture = () => {
 
   return (
     <div className="min-h-screen pb-20">
+      <HamburgerMenu />
       <header className="p-6">
         <h1 className="text-2xl font-bold mb-2">{t("culture.title")}</h1>
         <p className="text-gray-600">{t("culture.subtitle")}</p>
