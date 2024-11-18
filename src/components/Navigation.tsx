@@ -1,4 +1,4 @@
-import { BookOpen, Trophy, Music, MessageCircle } from "lucide-react";
+import { BookOpen, Trophy, Music, MessageCircle, Globe, Settings, Book, Users } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation, Link } from "react-router-dom";
 
@@ -8,12 +8,12 @@ const Navigation = () => {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-lg animate-fade-up">
-      <div className="flex items-center justify-around p-4">
+      <div className="grid grid-cols-4 items-center p-4">
         <NavItem 
-          to="/"
+          to="/lessons"
           icon={<BookOpen className="w-6 h-6" />} 
           label={t("nav.lessons")} 
-          active={location.pathname === "/"} 
+          active={location.pathname === "/lessons"} 
         />
         <NavItem 
           to="/practice"
@@ -28,10 +28,10 @@ const Navigation = () => {
           active={location.pathname === "/progress"} 
         />
         <NavItem 
-          to="/chat"
-          icon={<MessageCircle className="w-6 h-6" />} 
-          label={t("nav.chat")} 
-          active={location.pathname === "/chat"} 
+          to="/community"
+          icon={<Users className="w-6 h-6" />} 
+          label={t("nav.community")} 
+          active={location.pathname === "/community"} 
         />
       </div>
     </nav>
