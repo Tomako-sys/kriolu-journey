@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export default function HamburgerMenu() {
+const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useLanguage();
 
@@ -21,12 +21,11 @@ export default function HamburgerMenu() {
 
   return (
     <div className="relative z-50">
-        <button
-     onClick={() => setIsOpen(!isOpen)}
-     className="fixed top-4 right-4 p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
-     aria-label="Menu"
-     aria-expanded={isOpen}
-   >
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed top-4 right-4 p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
+        aria-label="Menu"
+        aria-expanded={isOpen}
       >
         <Menu className="w-6 h-6 text-primary" />
       </button>
@@ -69,6 +68,6 @@ export default function HamburgerMenu() {
       </AnimatePresence>
     </div>
   );
-}
+};
 
 export default HamburgerMenu;
