@@ -9,13 +9,13 @@ export default function HamburgerMenu() {
   const { t } = useLanguage();
 
   const menuItems = [
-      { path: "/", label: `${t("nav.home")}.` },
-      { path: "/lessons", label: `Leçons.` },
+      { path: "/index", label: `${t( `home")}.` },
+      { path: "/lessons", label: `Leçons` },
       { path: "/practice", label: `Pratique.` },
-      { path: "/progress", label: `Progrès.` },
-      { path: "/culture", label: `${t("nav.culture")}.` },
-      { path: "/community", label: `Communauté.` },
-      { path: "/settings", label: `${t("nav.settings")}.` },
+      { path: "/progress", label: `Progrès` },
+      { path: "/culture", label: `${t("Culture")}.` },
+      { path: "/community", label: `Communauté` },
+      { path: "/settings", label: `${t("Settings")}.` },
     ];
 
   return (
