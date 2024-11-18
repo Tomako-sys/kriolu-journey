@@ -1,49 +1,58 @@
 import Navigation from "@/components/Navigation";
 import ProgressBar from "@/components/ProgressBar";
-import LessonCard from "@/components/LessonCard";
-import VocabularyPractice from "@/components/VocabularyPractice";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Trophy, Flame, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const { t } = useLanguage();
+  const streakDays = 5;
 
   return (
-    <div className="min-h-screen pb-20">
-      {/* Header */}
-      <header className="p-6 mb-8">
+    <div className="min-h-screen pb-20 bg-sand-light">
+      {/* Header with Welcome */}
+      <header className="p-6 bg-primary text-white">
         <h1 className="text-3xl font-bold mb-2 animate-fade-up">Bon dia!</h1>
-        <p className="text-gray-600 animate-fade-up" style={{ animationDelay: "100ms" }}>
+        <p className="animate-fade-up" style={{ animationDelay: "100ms" }}>
           {t("welcome")}
         </p>
       </header>
 
+      {/* Daily Stats */}
+      <section className="p-4 bg-white rounded-lg mx-4 -mt-4 shadow-lg">
+        <div className="flex justify-between items-center">
+          <div className="text-center">
+            <Trophy className="w-6 h-6 text-primary mx-auto mb-1" />
+            <span className="text-sm">Level 2</span>
+          </div>
+          <div className="text-center">
+            <Flame className="w-6 h-6 text-secondary mx-auto mb-1" />
+            <span className="text-sm">{streakDays} days</span>
+          </div>
+          <div className="text-center">
+            <Star className="w-6 h-6 text-yellow-500 mx-auto mb-1" />
+            <span className="text-sm">50 XP</span>
+          </div>
+        </div>
+      </section>
+
       {/* Progress Section */}
-      <section className="px-6 mb-8">
+      <section className="px-6 my-6">
+        <h2 className="text-lg font-semibold mb-2">Daily Goal</h2>
         <ProgressBar progress={35} />
       </section>
 
-      {/* Vocabulary Practice */}
-      <section className="mb-12">
-        <VocabularyPractice />
-      </section>
-
-      {/* Continue Learning */}
-      <section className="px-6">
-        <h2 className="text-2xl font-semibold mb-4">{t("continue.learning")}</h2>
-        <div className="grid gap-4">
-          <LessonCard 
-            title="Basic Greetings"
-            description="Learn essential greetings in Kriolu"
-            progress={75}
-            imageUrl="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
-          />
-          <LessonCard 
-            title="Numbers & Counting"
-            description="Master numbers from 1 to 100"
-            progress={30}
-            imageUrl="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07"
-          />
-        </div>
+      {/* Quick Actions */}
+      <section className="px-6 mb-8">
+        <h2 className="text-lg font-semibold mb-4">Continue Learning</h2>
+        <Link to="/lessons" className="block bg-white p-4 rounded-lg shadow mb-4 hover:shadow-md transition-shadow">
+          <h3 className="font-medium text-primary">Basic Phrases</h3>
+          <p className="text-sm text-gray-600">Learn essential Kriolu greetings</p>
+        </Link>
+        <Link to="/practice" className="block bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow">
+          <h3 className="font-medium text-primary">Daily Practice</h3>
+          <p className="text-sm text-gray-600">Review today's vocabulary</p>
+        </Link>
       </section>
 
       <Navigation />
