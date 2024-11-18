@@ -7,80 +7,114 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ChevronRight } from "lucide-react";
+import WordPractice from "@/components/WordPractice";
+import { useState } from "react";
 
 const Lessons = () => {
   const { t } = useLanguage();
+  const [points, setPoints] = useState(0);
+
+  const handleWordValidation = (isCorrect: boolean) => {
+    if (isCorrect) {
+      setPoints(prev => prev + 10);
+    }
+  };
 
   const lessonCategories = [
     {
-      title: "Basics",
+      title: "Les bases",
       lessons: [
         {
-          title: "Greetings & Introductions",
-          description: "Learn essential greetings and how to introduce yourself",
+          title: "Salutations",
           content: [
-            { type: "text", value: "Olá (Hello)" },
-            { type: "text", value: "Bon dia (Good morning)" },
-            { type: "text", value: "Bon tardi (Good afternoon)" },
-            { type: "text", value: "Bon noti (Good night)" },
-            { type: "text", value: "Nha nomi é... (My name is...)" },
-          ],
-          progress: 75,
-          imageUrl: "https://images.unsplash.com/photo-1516575334481-f85287c2c82d"
+            { type: "word", original: "Olá", translation: "Bonjour", audio: "/audio/ola.mp3" },
+            { type: "word", original: "Bon dia", translation: "Bonjour (matin)", audio: "/audio/bondia.mp3" },
+            { type: "word", original: "Bon tardi", translation: "Bonsoir", audio: "/audio/bontardi.mp3" },
+          ]
         },
         {
-          title: "Numbers 1-20",
-          description: "Master counting in Kriolu",
+          title: "Se présenter",
           content: [
-            { type: "text", value: "Un (One)" },
-            { type: "text", value: "Dos (Two)" },
-            { type: "text", value: "Tres (Three)" },
-            { type: "text", value: "Kuatu (Four)" },
-            { type: "text", value: "Sinku (Five)" },
-          ],
-          progress: 30,
-          imageUrl: "https://images.unsplash.com/photo-1509228468518-180dd4864904"
+            { type: "word", original: "Nha nomi é", translation: "Je m'appelle", audio: "/audio/nhanomi.mp3" },
+            { type: "word", original: "Modi bu sta", translation: "Comment vas-tu", audio: "/audio/modibusta.mp3" },
+            { type: "word", original: "N sta dretu", translation: "Je vais bien", audio: "/audio/nstadretu.mp3" },
+          ]
         }
       ]
     },
     {
-      title: "Daily Life",
+      title: "La vie quotidienne",
       lessons: [
         {
-          title: "Food & Drinks",
-          description: "Essential vocabulary for restaurants and meals",
+          title: "La nourriture",
           content: [
-            { type: "text", value: "Kumida (Food)" },
-            { type: "text", value: "Águ (Water)" },
-            { type: "text", value: "Kafé (Coffee)" },
-            { type: "text", value: "Pon (Bread)" },
-            { type: "text", value: "Katxupa (Traditional dish)" },
-          ],
-          progress: 0,
-          imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+            { type: "word", original: "Kumida", translation: "Nourriture", audio: "/audio/kumida.mp3" },
+            { type: "word", original: "Katxupa", translation: "Cachupa", audio: "/audio/katxupa.mp3" },
+            { type: "word", original: "Pexe", translation: "Poisson", audio: "/audio/pexe.mp3" },
+          ]
         },
         {
-          title: "Shopping",
-          description: "Learn how to shop and bargain in Kriolu",
+          title: "Les boissons",
           content: [
-            { type: "text", value: "Kantu ki kusta? (How much is it?)" },
-            { type: "text", value: "Mutu karu (Very expensive)" },
-            { type: "text", value: "Baratu (Cheap)" },
-            { type: "text", value: "Bu teni...? (Do you have...?)" },
-          ],
-          progress: 0,
-          imageUrl: "https://images.unsplash.com/photo-1472851294608-062f824d29cc"
+            { type: "word", original: "Águ", translation: "Eau", audio: "/audio/agu.mp3" },
+            { type: "word", original: "Kafé", translation: "Café", audio: "/audio/kafe.mp3" },
+            { type: "word", original: "Sumu", translation: "Jus", audio: "/audio/sumu.mp3" },
+          ]
+        }
+      ]
+    },
+    {
+      title: "La famille",
+      lessons: [
+        {
+          title: "Les membres de la famille",
+          content: [
+            { type: "word", original: "Mai", translation: "Mère", audio: "/audio/mai.mp3" },
+            { type: "word", original: "Pai", translation: "Père", audio: "/audio/pai.mp3" },
+            { type: "word", original: "Irmon", translation: "Frère", audio: "/audio/irmon.mp3" },
+          ]
+        },
+        {
+          title: "Les relations",
+          content: [
+            { type: "word", original: "Família", translation: "Famille", audio: "/audio/familia.mp3" },
+            { type: "word", original: "Amigu", translation: "Ami", audio: "/audio/amigu.mp3" },
+            { type: "word", original: "Vizinhu", translation: "Voisin", audio: "/audio/vizinhu.mp3" },
+          ]
+        }
+      ]
+    },
+    {
+      title: "Les nombres",
+      lessons: [
+        {
+          title: "Les chiffres de 1 à 10",
+          content: [
+            { type: "word", original: "Un", translation: "Un", audio: "/audio/un.mp3" },
+            { type: "word", original: "Dos", translation: "Deux", audio: "/audio/dos.mp3" },
+            { type: "word", original: "Tres", translation: "Trois", audio: "/audio/tres.mp3" },
+          ]
+        },
+        {
+          title: "Les dizaines",
+          content: [
+            { type: "word", original: "Dez", translation: "Dix", audio: "/audio/dez.mp3" },
+            { type: "word", original: "Vinti", translation: "Vingt", audio: "/audio/vinti.mp3" },
+            { type: "word", original: "Trinta", translation: "Trente", audio: "/audio/trinta.mp3" },
+          ]
         }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen pb-20 bg-sand-light">
+    <div className="min-h-screen bg-sand-light">
       <header className="sticky top-0 z-10 p-6 bg-white/80 backdrop-blur-xl border-b border-gray-100">
         <h1 className="text-2xl font-bold mb-2">{t("lessons.title")}</h1>
         <p className="text-sm text-gray-600">{t("lessons.subtitle")}</p>
+        <div className="mt-2 text-primary font-semibold">
+          Points: {points}
+        </div>
       </header>
 
       <ScrollArea className="h-[calc(100vh-180px)]">
@@ -98,34 +132,22 @@ const Lessons = () => {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="space-y-4 p-4">
+                  <div className="space-y-6 p-4">
                     {category.lessons.map((lesson, lessonIndex) => (
-                      <div
-                        key={lessonIndex}
-                        className="rounded-xl bg-gray-50 p-4 transition-all duration-200 hover:bg-gray-100 cursor-pointer"
-                      >
-                        <div className="flex items-center justify-between mb-4">
-                          <div>
-                            <h3 className="font-semibold mb-1">{lesson.title}</h3>
-                            <p className="text-sm text-gray-600">{lesson.description}</p>
-                          </div>
-                          <ChevronRight className="w-5 h-5 text-gray-400" />
-                        </div>
-                        <div className="space-y-2">
+                      <div key={lessonIndex} className="space-y-4">
+                        <h3 className="font-semibold text-lg text-primary">
+                          {lesson.title}
+                        </h3>
+                        <div className="grid gap-4">
                           {lesson.content.map((item, itemIndex) => (
-                            <div
+                            <WordPractice
                               key={itemIndex}
-                              className="p-3 bg-white rounded-lg shadow-sm"
-                            >
-                              {item.value}
-                            </div>
+                              word={item.original}
+                              translation={item.translation}
+                              audioUrl={item.audio}
+                              onValidation={handleWordValidation}
+                            />
                           ))}
-                        </div>
-                        <div className="mt-4 h-1 bg-gray-100 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-primary transition-all duration-500 ease-out"
-                            style={{ width: `${lesson.progress}%` }}
-                          />
                         </div>
                       </div>
                     ))}
