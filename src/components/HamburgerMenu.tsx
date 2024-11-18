@@ -23,7 +23,7 @@ const HamburgerMenu = () => {
     <div className="relative z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
+        className="fixed top-4 right-4 p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
         aria-label="Menu"
       >
         <Menu className="w-6 h-6 text-primary" />
@@ -68,5 +68,3 @@ const HamburgerMenu = () => {
     </div>
   );
 };
-
-export default HamburgerMenu;
