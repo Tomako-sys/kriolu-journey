@@ -12,7 +12,7 @@ const Index = () => {
     <div>
       <HamburgerMenu />
       <h1>{t("welcome")}</h1>
-      <ProgressBar />
+      <ProgressBar progress={0} />
       <div className="flex justify-around mt-4">
         <Link to="/lessons" className="flex flex-col items-center">
           <Trophy className="h-8 w-8 text-primary" />
